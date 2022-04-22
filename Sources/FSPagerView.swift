@@ -512,7 +512,8 @@ open class FSPagerView: UIView,UICollectionViewDataSource,UICollectionViewDelega
     @objc(scrollToItemAtIndex:animated:)
     open func scrollToItem(at index: Int, animated: Bool) {
         guard index < self.numberOfItems else {
-            fatalError("index \(index) is out of range [0...\(self.numberOfItems-1)]")
+            // fatalError("index \(index) is out of range [0...\(self.numberOfItems-1)]")
+            return
         }
         let indexPath = { () -> IndexPath in
             if let indexPath = self.possibleTargetingIndexPath, indexPath.item == index {
